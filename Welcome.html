@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow"><!-- staging-noindex -->
+<!-- Google Analytics (GA4) with Consent Mode: no analytics cookies until the visitor accepts the cookie banner; not run on localhost -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M8EMHJ3W55"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function () {
+    var h = window.location.hostname;
+    if (h === 'localhost' || h === '127.0.0.1' || h === '') { window['ga-disable-G-M8EMHJ3W55'] = true; }
+    var c = null; try { c = localStorage.getItem('sg_cookie_consent'); } catch (e) {}
+    gtag('consent', 'default', { analytics_storage: c === 'accepted' ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+  })();
+  gtag('js', new Date());
+  gtag('config', 'G-M8EMHJ3W55');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome | MeNim Ghana</title>
+<meta name="description" content="Finish setting up your MeNim Ghana account.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://www.menimghana.com/Welcome.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MeNim Ghana">
+<meta property="og:title" content="Welcome | MeNim Ghana">
+<meta property="og:description" content="Finish setting up your MeNim Ghana account.">
+<meta property="og:url" content="https://www.menimghana.com/Welcome.html">
+<meta property="og:image" content="https://www.menimghana.com/Icons/menim-share.jpg">
+<meta property="og:locale" content="en_GH">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@menimghana">
+<meta name="twitter:title" content="Welcome | MeNim Ghana">
+<meta name="twitter:description" content="Finish setting up your MeNim Ghana account.">
+<meta name="twitter:image" content="https://www.menimghana.com/Icons/menim-share.jpg">
+<link rel="icon" type="image/png" href="Icons/menim-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand-red: #CE1126; --brand-red-dark: #A50D1E; --brand-red-light: #FDEAED;
+    --brand-gold: #FCD116; --brand-gold-dark: #E0B800; --brand-gold-text: #8A6B00; --brand-gold-light: #FFFBE6;
+    --brand-green: #006B3F; --brand-green-light: #E6F4EE;
+    --white: #ffffff;
+    --gray-50: #FAF9F7; --gray-100: #F2F0EB; --gray-200: #E0DDD5;
+    --gray-400: #74706A; --gray-600: #5A5650; --gray-700: #403D38;
+    --gray-800: #2A2723; --gray-900: #1A1816;
+    --radius-sm: 6px; --radius-md: 10px; --radius-lg: 16px; --radius-xl: 24px;
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.06);
+    --shadow-lg: 0 16px 40px rgba(0,0,0,0.16), 0 4px 12px rgba(0,0,0,0.08);
+    --font-display: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-body); color: var(--gray-800); background: var(--white); line-height: 1.6; font-size: 15px; }
+
+  .flag-stripe { height: 5px; background: linear-gradient(to right, var(--brand-red) 33.33%, var(--brand-gold) 33.33%, var(--brand-gold) 66.66%, var(--brand-green) 66.66%); }
+
+  .nav { background: var(--white); border-bottom: 1px solid var(--gray-100); position: sticky; top: 0; z-index: 200; }
+  .nav-inner { max-width: 1340px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .logo { font-family: var(--font-display); font-size: 22px; font-weight: 800; color: var(--brand-green); text-decoration: none; letter-spacing: -0.5px; display: flex; align-items: center; gap: 5px; flex-shrink: 0; }
+  .logo span { color: var(--gray-900); letter-spacing: -0.5px; }
+  .logo .search { color: #1A1A1A; }
+  .logo .G { color: var(--brand-red); }
+  .logo .h { color: var(--brand-gold-dark); }
+  .logo .star { color: #1A1A1A; }
+  .logo .n { color: var(--brand-gold-dark); }
+  .logo .a { color: var(--brand-green); }
+  .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; flex: 1; justify-content: center; }
+  .nav-links a { text-decoration: none; color: var(--gray-600); font-size: 14px; font-weight: 500; padding: 6px 12px; border-radius: var(--radius-sm); transition: all 0.15s; }
+  .nav-links a:hover { color: var(--gray-900); background: var(--gray-50); }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+
+  .auth-container { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; background: var(--gray-50); }
+  .auth-card { background: var(--white); border: 1px solid var(--gray-100); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); max-width: 420px; width: 100%; padding: 48px; }
+  .auth-header { text-align: center; margin-bottom: 32px; }
+  .auth-title { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: var(--gray-900); letter-spacing: -0.5px; margin-bottom: 8px; }
+  .auth-subtitle { font-size: 14px; color: var(--gray-600); }
+
+  .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+  .form-label { font-size: 13px; font-weight: 600; color: var(--gray-700); }
+  .form-input { border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 12px 14px; font-family: var(--font-body); font-size: 14px; color: var(--gray-900); background: var(--white); transition: all 0.15s; }
+  .form-input:focus { outline: none; border-color: var(--brand-green); box-shadow: 0 0 0 3px rgba(0,107,63,0.1); }
+  .form-error { font-size: 12px; color: var(--brand-red); display: none; }
+  .form-input.error ~ .form-error { display: block; }
+  .password-requirements { list-style: none; padding: 0; margin: 2px 0 0; display: flex; flex-direction: column; gap: 3px; }
+  .password-requirements li { font-size: 12px; color: var(--gray-600); display: flex; align-items: center; gap: 6px; transition: color 0.15s; }
+  .password-requirements li::before { content: "○"; color: var(--gray-400); font-size: 9px; }
+  .password-requirements li.met { color: var(--brand-green); }
+  .password-requirements li.met::before { content: "✓"; color: var(--brand-green); font-weight: 700; }
+
+  .form-checkbox { display: flex; align-items: center; gap: 6px; margin-bottom: 24px; font-size: 13px; color: var(--gray-600); }
+  .form-checkbox input { accent-color: var(--brand-green); }
+  .form-checkbox a { color: var(--brand-green); text-decoration: none; font-weight: 500; }
+  .form-checkbox a:hover { text-decoration: underline; }
+
+  .btn-signup { background: var(--brand-red); color: var(--white); border: none; border-radius: var(--radius-md); padding: 14px 24px; font-family: var(--font-display); font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.15s; width: 100%; }
+  .btn-signup:hover { background: var(--brand-red-dark); transform: translateY(-1px); }
+
+  .auth-divider { display: flex; align-items: center; gap: 12px; margin: 24px 0; font-size: 13px; color: var(--gray-400); }
+  .auth-divider span { flex: 1; height: 1px; background: var(--gray-200); }
+
+  .social-buttons { display: flex; gap: 12px; }
+  .social-btn { flex: 1; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 12px; font-size: 14px; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .social-btn:hover { background: var(--gray-100); border-color: var(--gray-400); }
+
+  .auth-footer { text-align: center; margin-top: 24px; font-size: 14px; color: var(--gray-600); }
+  .auth-footer a { color: var(--brand-green); font-weight: 600; text-decoration: none; }
+  .auth-footer a:hover { text-decoration: underline; }
+
+  .footer { background: #0D0D0D; padding: 56px 24px 32px; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-flag { height: 4px; background: linear-gradient(to right, var(--brand-red) 33.33%, var(--brand-gold) 33.33%, var(--brand-gold) 66.66%, var(--brand-green) 66.66%); border-radius: 2px; margin-bottom: 40px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 40px; margin-bottom: 48px; }
+  .footer-brand .logo { margin-bottom: 12px; }
+  .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; max-width: 240px; }
+  .footer-col h4 { color: var(--white); font-size: 13px; font-weight: 600; margin-bottom: 16px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li + li { margin-top: 8px; }
+  .footer-col ul li a { color: rgba(255,255,255,0.38); text-decoration: none; font-size: 13px; transition: color 0.15s; }
+  .footer-col ul li a:hover { color: var(--brand-gold); }
+  .footer-brand .logo .search { color: var(--white); }
+  .footer-brand .logo .star { color: var(--white); }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; color: rgba(255,255,255,0.28); }
+  .footer-bottom a { color: rgba(255,255,255,0.38); text-decoration: none; }
+  .footer-bottom a:hover { color: var(--brand-gold); }
+  .footer-links { display: flex; gap: 20px; }
+  .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; color: var(--gray-800); font-size: 22px; line-height: 1; align-items: center; justify-content: center; flex-shrink: 0; }
+  .nav-hamburger:hover { color: var(--brand-green); }
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-links.mobile-open { display: flex; flex-direction: column; align-items: stretch; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--gray-100); box-shadow: 0 16px 40px rgba(0,0,0,0.16), 0 4px 12px rgba(0,0,0,0.08); padding: 8px 16px 16px; gap: 4px; z-index: 250; }
+    .nav-links.mobile-open li { width: 100%; }
+    .nav-links.mobile-open a { display: block; padding: 12px 10px; }
+    .nav-links.mobile-open .nav-cta { display: block; text-align: center; margin-top: 4px; }
+  }
+</style>
+<style id="responsive-footer">
+/* shared small-screen fixes for nav + footer (responsive-footer) */
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-brand p { max-width: none; }
+}
+@media (max-width: 560px) {
+  .nav-inner { padding-left: 16px; padding-right: 16px; gap: 8px; }
+  .footer { padding: 40px 16px 24px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .footer-links { flex-wrap: wrap; gap: 8px 16px; }
+}
+</style>
+<link rel="stylesheet" href="css/mobile-polish.css">
+<style id="brand-logo">
+.logo{align-items:center;gap:5px}
+.logo .logo-mark{height:30px;width:auto;display:block;flex:none;margin-right:3px}
+.logo .brand-menim{color:#1A1A1A}
+.logo .G{color:#CE1126}
+.logo .h,.logo .n{color:#E0B800}
+.logo .star{color:#1A1A1A}
+.logo .a{color:#006B3F}
+.footer-brand .logo .brand-menim,.footer-brand .logo .star{color:#fff}
+.footer-brand .logo .a{color:#3ED16B}
+</style>
+<style id="welcome-css">
+  .wl-wrap { min-height: calc(100vh - 80px); display: flex; align-items: flex-start; justify-content: center; padding: 40px 20px 64px; background: var(--gray-50); }
+  .wl-card { background: var(--white); border: 1px solid var(--gray-100); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); max-width: 640px; width: 100%; padding: 40px 44px 36px; }
+  .wl-steps { list-style: none; display: flex; gap: 8px; margin-bottom: 28px; padding: 0; }
+  .wl-steps li { flex: 1; font-size: 12px; font-weight: 600; color: var(--gray-400); display: flex; align-items: center; gap: 8px; padding-top: 10px; border-top: 3px solid var(--gray-100); }
+  .wl-steps li span { width: 20px; height: 20px; border-radius: 50%; background: var(--gray-100); color: var(--gray-600); display: inline-flex; align-items: center; justify-content: center; font-size: 11px; }
+  .wl-steps li.on { color: var(--gray-900); border-top-color: var(--brand-green); }
+  .wl-steps li.on span { background: var(--brand-green); color: #fff; }
+  .wl-steps li.done { color: var(--brand-green); border-top-color: var(--brand-green); }
+  .wl-steps li.done span { background: var(--brand-green-light); color: var(--brand-green); }
+  .wl-title { font-family: var(--font-display); font-size: 28px; font-weight: 800; color: var(--gray-900); letter-spacing: -0.5px; margin-bottom: 8px; }
+  .wl-sub { font-size: 14px; color: var(--gray-600); margin-bottom: 24px; }
+  .wl-center { text-align: center; }
+  .wl-legend { font-size: 14px; font-weight: 700; color: var(--gray-800); margin-bottom: 10px; padding: 0; }
+  .wl-opt { font-weight: 400; color: var(--gray-400); font-size: 12px; }
+  fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+  .wl-choices { display: grid; gap: 12px; }
+  .wl-choices .wl-legend { grid-column: 1 / -1; }
+  .wl-choice { display: block; cursor: pointer; }
+  .wl-choice input { position: absolute; opacity: 0; pointer-events: none; }
+  .wl-choice-box { display: grid; grid-template-columns: 44px 1fr; column-gap: 14px; align-items: center; border: 2px solid var(--gray-200); border-radius: var(--radius-lg); padding: 16px 18px; transition: all .15s; }
+  .wl-choice-box .wl-ico { grid-row: 1 / 3; font-size: 28px; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--gray-50); border-radius: 12px; }
+  .wl-choice-box strong { font-family: var(--font-display); font-size: 15px; color: var(--gray-900); }
+  .wl-choice-box small { font-size: 13px; color: var(--gray-600); line-height: 1.4; }
+  .wl-choice:hover .wl-choice-box { border-color: var(--gray-400); }
+  .wl-choice input:checked + .wl-choice-box { border-color: var(--brand-green); background: var(--brand-green-light); box-shadow: 0 0 0 3px rgba(0,107,63,.12); }
+  .wl-choice input:focus-visible + .wl-choice-box { outline: 2px solid var(--brand-red); outline-offset: 2px; }
+  .wl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px; }
+  .wl-full { grid-column: 1 / -1; }
+  .wl-field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .wl-field label { font-size: 13px; font-weight: 600; color: var(--gray-700); }
+  .wl-input { border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 12px 14px; font-family: var(--font-body); font-size: 14px; color: var(--gray-900); background: var(--white); width: 100%; transition: all .15s; }
+  .wl-input:focus { outline: none; border-color: var(--brand-green); box-shadow: 0 0 0 3px rgba(0,107,63,.1); }
+  .wl-input.bad { border-color: var(--brand-red); }
+  .wl-hint { font-size: 12px; color: var(--gray-400); }
+  .wl-note { font-size: 12.5px; color: var(--gray-600); background: var(--brand-gold-light); border: 1px solid #F3E3A0; border-radius: var(--radius-md); padding: 10px 14px; margin-bottom: 8px; }
+  .wl-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .wl-chip { cursor: pointer; }
+  .wl-chip input { position: absolute; opacity: 0; pointer-events: none; }
+  .wl-chip span { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--gray-200); border-radius: 999px; padding: 8px 14px; font-size: 13px; font-weight: 500; color: var(--gray-700); background: var(--white); transition: all .15s; }
+  .wl-chip:hover span { border-color: var(--gray-400); }
+  .wl-chip input:checked + span { background: var(--brand-green); border-color: var(--brand-green); color: #fff; }
+  .wl-chip input:focus-visible + span { outline: 2px solid var(--brand-red); outline-offset: 2px; }
+  .wl-error { color: var(--brand-red); font-size: 13px; min-height: 0; margin: 8px 0 0; }
+  .wl-error:empty { display: none; }
+  .wl-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 24px; }
+  .wl-btn { background: var(--brand-red); color: #fff; border: 0; border-radius: var(--radius-md); padding: 13px 28px; font-family: var(--font-display); font-size: 15px; font-weight: 700; cursor: pointer; transition: all .15s; }
+  .wl-btn:hover { background: var(--brand-red-dark); transform: translateY(-1px); }
+  .wl-btn:disabled { opacity: .6; cursor: default; transform: none; }
+  .wl-skip { background: none; border: 0; color: var(--gray-600); font-size: 14px; font-weight: 500; cursor: pointer; padding: 10px 4px; text-decoration: underline; text-underline-offset: 3px; }
+  .wl-skip:hover { color: var(--gray-900); }
+  .wl-done-ico { width: 64px; height: 64px; margin: 0 auto 16px; border-radius: 50%; background: var(--brand-green); color: #fff; font-size: 32px; display: flex; align-items: center; justify-content: center; }
+  .wl-next { display: grid; gap: 12px; margin-top: 8px; }
+  .wl-next a { display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 14px; text-decoration: none; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 14px 16px; color: var(--gray-900); transition: all .15s; }
+  .wl-next a:hover { border-color: var(--brand-green); box-shadow: var(--shadow-md); }
+  .wl-next a.primary { border-color: var(--brand-green); background: var(--brand-green-light); }
+  .wl-next .ni { font-size: 24px; text-align: center; }
+  .wl-next strong { display: block; font-family: var(--font-display); font-size: 15px; }
+  .wl-next small { color: var(--gray-600); font-size: 13px; }
+  .wl-next .arrow { color: var(--brand-green); font-weight: 700; }
+  [hidden] { display: none !important; }
+  @media (max-width: 560px) {
+    .wl-wrap { padding: 20px 12px 40px; }
+    .wl-card { padding: 28px 20px 24px; border-radius: var(--radius-lg); }
+    .wl-title { font-size: 24px; }
+    .wl-grid { grid-template-columns: 1fr; }
+    .wl-steps li { font-size: 11px; }
+    .wl-actions { flex-direction: column-reverse; align-items: stretch; }
+    .wl-btn { width: 100%; }
+    .wl-skip { text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="flag-stripe"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="MeNim Ghana"><img class="logo-mark" src="Icons/menim-icon.png" alt="" width="40" height="30"><span class="brand-menim" aria-hidden="true">MeNim</span><span class="G" aria-hidden="true">G</span><span class="h" aria-hidden="true">h</span><span class="star" aria-hidden="true">★</span><span class="n" aria-hidden="true">n</span><span class="a" aria-hidden="true">a</span></a>
+    <ul class="nav-links">
+      <li><a href="Browse.html">Browse</a></li>
+      <li><a href="Deals.html">Deals</a></li>
+      <li><a href="Reviews.html">Reviews</a></li>
+      <li><a href="Blog.html">Blog</a></li>
+      <li><a href="AddBusiness.html" class="nav-cta">List your business</a></li>
+    </ul>
+    <div class="nav-right"></div>
+    <button class="nav-hamburger" id="navHamburger" type="button" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileNav()">☰</button>
+  </div>
+</nav>
+
+<main class="wl-wrap">
+  <div class="wl-card" id="wlCard">
+    <ol class="wl-steps" id="wlSteps" aria-label="Progress">
+      <li class="on" data-s="1"><span>1</span> About you</li>
+      <li data-s="2"><span>2</span> Details</li>
+      <li data-s="3"><span>3</span> Done</li>
+    </ol>
+
+    <!-- Step 1 -->
+    <section id="step1" class="wl-step" aria-labelledby="s1h">
+      <h1 class="wl-title" id="s1h">Welcome<span id="wlName"></span></h1>
+      <p class="wl-sub">Tell us a little about you so we can set things up properly. It takes about a minute, and you can change it any time in your profile.</p>
+      <fieldset class="wl-choices">
+        <legend class="wl-legend">What brings you to MeNim Ghana?</legend>
+        <label class="wl-choice">
+          <input type="radio" name="accountType" value="visitor">
+          <span class="wl-choice-box"><span class="wl-ico" aria-hidden="true">🔎</span><strong>I'm looking for businesses</strong><small>Find trusted places near you, save favourites, read and write reviews.</small></span>
+        </label>
+        <label class="wl-choice">
+          <input type="radio" name="accountType" value="owner">
+          <span class="wl-choice-box"><span class="wl-ico" aria-hidden="true">🏪</span><strong>I own or manage a business</strong><small>List your business, claim an existing listing, reply to reviews.</small></span>
+        </label>
+      </fieldset>
+      <p class="wl-error" id="e1" role="alert"></p>
+      <div class="wl-actions">
+        <button type="button" class="wl-skip" id="skip1">Skip for now</button>
+        <button type="button" class="wl-btn" id="next1">Continue</button>
+      </div>
+    </section>
+
+    <!-- Step 2 -->
+    <section id="step2" class="wl-step" hidden aria-labelledby="s2h">
+      <h1 class="wl-title" id="s2h">A few details</h1>
+      <p class="wl-sub" id="s2sub"></p>
+
+      <div class="wl-grid">
+        <div class="wl-field">
+          <label for="obPhone">Phone number <span id="phoneReq" class="wl-opt">(optional)</span></label>
+          <input type="tel" id="obPhone" class="wl-input" placeholder="e.g. 024 123 4567" autocomplete="tel" inputmode="tel">
+          <small class="wl-hint" id="phoneHint">Only used for your account. Never shown publicly.</small>
+        </div>
+        <div class="wl-field">
+          <label for="obRegion">Region <span id="regionReq" class="wl-opt">(optional)</span></label>
+          <select id="obRegion" class="wl-input">
+            <option value="">Select region</option>
+            <option value="greater-accra">Greater Accra</option><option value="ashanti">Ashanti</option>
+            <option value="western">Western</option><option value="eastern">Eastern</option>
+            <option value="northern">Northern</option><option value="volta">Volta</option>
+            <option value="central">Central</option><option value="upper-east">Upper East</option>
+            <option value="upper-west">Upper West</option><option value="bono">Bono</option>
+            <option value="oti">Oti</option><option value="ahafo">Ahafo</option>
+            <option value="bono-east">Bono East</option><option value="savannah">Savannah</option>
+            <option value="north-east">North East</option><option value="western-north">Western North</option>
+          </select>
+        </div>
+        <div class="wl-field wl-full">
+          <label for="obCity">City / town <span id="cityReq" class="wl-opt">(optional)</span></label>
+          <input type="text" id="obCity" class="wl-input" placeholder="e.g. Osu, Kumasi, Tamale" autocomplete="address-level2" maxlength="80">
+        </div>
+      </div>
+
+      <!-- Visitor only -->
+      <div id="visitorFields" hidden>
+        <fieldset class="wl-interests">
+          <legend class="wl-legend">What are you usually looking for? <span class="wl-opt">(pick any)</span></legend>
+          <div class="wl-chips" id="chips"></div>
+        </fieldset>
+      </div>
+
+      <!-- Owner only -->
+      <div id="ownerFields" hidden>
+        <div class="wl-grid">
+          <div class="wl-field wl-full">
+            <label for="obBizName">Business name</label>
+            <input type="text" id="obBizName" class="wl-input" placeholder="e.g. Mama's Chop Bar" maxlength="120" autocomplete="organization">
+          </div>
+          <div class="wl-field">
+            <label for="obRole">Your role</label>
+            <select id="obRole" class="wl-input">
+              <option value="">Select role</option>
+              <option value="owner">Owner</option>
+              <option value="manager">Manager</option>
+              <option value="representative">Authorised representative</option>
+            </select>
+          </div>
+          <div class="wl-field">
+            <label for="obStage">Is your business already on MeNim Ghana?</label>
+            <select id="obStage" class="wl-input">
+              <option value="">Select</option>
+              <option value="new">No, I want to add it</option>
+              <option value="listed">Yes, I want to claim it</option>
+              <option value="unsure">Not sure</option>
+            </select>
+          </div>
+        </div>
+        <p class="wl-note">We use these details to help verify that you are the rightful owner. You will be asked for proof when you claim or list a business.</p>
+      </div>
+
+      <p class="wl-error" id="e2" role="alert"></p>
+      <div class="wl-actions">
+        <button type="button" class="wl-skip" id="back2">Back</button>
+        <button type="button" class="wl-btn" id="next2">Finish</button>
+      </div>
+    </section>
+
+    <!-- Step 3 -->
+    <section id="step3" class="wl-step" hidden aria-labelledby="s3h">
+      <div class="wl-done-ico" aria-hidden="true">✓</div>
+      <h1 class="wl-title wl-center" id="s3h">You're all set</h1>
+      <p class="wl-sub wl-center" id="s3sub"></p>
+      <div class="wl-next" id="nextCards"></div>
+    </section>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-flag"></div>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="MeNim Ghana"><img class="logo-mark" src="Icons/menim-icon.png" alt="" width="40" height="30"><span class="brand-menim" aria-hidden="true">MeNim</span><span class="G" aria-hidden="true">G</span><span class="h" aria-hidden="true">h</span><span class="star" aria-hidden="true">★</span><span class="n" aria-hidden="true">n</span><span class="a" aria-hidden="true">a</span></a>
+        <p>Where Ghana Finds Business. Connecting communities with quality businesses across all 16 regions.</p>
+      </div>
+      <div class="footer-col">
+        <h4>For businesses</h4>
+        <ul>
+          <li><a href="AddBusiness.html">Add your business</a></li>
+          <li><a href="Profile.html#listings">Business dashboard</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="Browse.html">All categories</a></li>
+          <li><a href="Browse.html">Browse by region</a></li>
+          <li><a href="Deals.html">Deals &amp; offers</a></li>
+          <li><a href="Blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="AboutUs.html">About us</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="HelpCenter.html">Help Center</a></li>
+          <li><a href="PrivacyPolicy.html">Privacy policy</a></li>
+          <li><a href="TermsOfService.html">Terms of use</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://www.facebook.com/MeNimGhana">Facebook</a></li>
+          <li><a href="https://x.com/MeNimGhana">X</a></li>
+          <li><a href="https://www.instagram.com/MeNimGhana">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@MeNimGhana">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> MeNim Ghana. All rights reserved. 🇬🇭</span>
+      <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+      </script>
+      <div class="footer-links">
+        <a href="PrivacyPolicy.html">Privacy</a>
+        <a href="TermsOfService.html">Terms</a>
+        <a href="Contact.html">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="js/supabase-client.js"></script>
+<script>
+(function () {
+  var CATS = [['food','🍲','Food & Drink'],['salons','💇🏾','Salons & Barbers'],['pharmacies','💊','Pharmacies'],['clinics','🏥','Clinics & Hospitals'],
+              ['plumbers','🔧','Plumbers'],['electricians','⚡','Electricians'],['builders','🏗️','Builders & Masons'],['transport','🚐','Transport & Taxis'],
+              ['fashion','👗','Fashion & Tailors'],['mobile-money','📱','Mobile Money']];
+  var user = null, meta = {}, type = '';
+  var $ = function (id) { return document.getElementById(id); };
+
+  function show(n) {
+    [1, 2, 3].forEach(function (i) { $('step' + i).hidden = (i !== n); });
+    document.querySelectorAll('#wlSteps li').forEach(function (li) {
+      var s = +li.dataset.s; li.classList.toggle('on', s === n); li.classList.toggle('done', s < n);
+    });
+    $('wlCard').scrollIntoView({ block: 'start', behavior: 'smooth' });
+    var h = $('step' + n).querySelector('h1'); if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
+  }
+  function err(id, msg) { $(id).textContent = msg || ''; }
+  function cleanPhone(v) { return (v || '').replace(/[\s\-().]/g, ''); }
+  function validPhone(v) { return /^\+?\d{9,15}$/.test(cleanPhone(v)); }
+
+  CATS.forEach(function (c) {
+    var l = document.createElement('label'); l.className = 'wl-chip';
+    var i = document.createElement('input'); i.type = 'checkbox'; i.value = c[0];
+    var s = document.createElement('span'); s.textContent = c[1] + ' ' + c[2];
+    l.appendChild(i); l.appendChild(s); $('chips').appendChild(l);
+  });
+
+  function configureStep2() {
+    var owner = type === 'owner';
+    $('visitorFields').hidden = owner; $('ownerFields').hidden = !owner;
+    $('s2sub').textContent = owner
+      ? 'This helps customers reach you and helps us confirm you are the rightful owner of a business.'
+      : 'This lets us show you businesses near you first. Everything here is optional.';
+    $('phoneReq').textContent = owner ? '(required)' : '(optional)';
+    $('regionReq').textContent = owner ? '(required)' : '(optional)';
+    $('phoneHint').textContent = owner ? 'Used for account security and verification. It is not shown on your listing unless you add it there.' : 'Only used for your account. Never shown publicly.';
+  }
+
+  $('next1').addEventListener('click', function () {
+    var c = document.querySelector('input[name="accountType"]:checked');
+    if (!c) { err('e1', 'Please choose one option to continue.'); return; }
+    err('e1', ''); type = c.value; configureStep2(); show(2);
+  });
+  $('back2').addEventListener('click', function () { show(1); });
+
+  async function save(data) {
+    var r = await window.sbClient.auth.updateUser({ data: data });
+    return r && r.error ? r.error : null;
+  }
+
+  $('skip1').addEventListener('click', async function () {
+    this.disabled = true;
+    await save({ onboarding_skipped_at: new Date().toISOString() });
+    window.location.href = 'index.html';
+  });
+
+  function bad(id, on) { $(id).classList.toggle('bad', !!on); }
+  ['obPhone', 'obRegion', 'obCity', 'obBizName', 'obRole', 'obStage'].forEach(function (id) {
+    var ev = $(id).tagName === 'SELECT' ? 'change' : 'input';
+    $(id).addEventListener(ev, function () { bad(id, false); err('e2', ''); });
+  });
+
+  $('next2').addEventListener('click', async function () {
+    var owner = type === 'owner';
+    var phone = $('obPhone').value.trim(), region = $('obRegion').value, city = $('obCity').value.trim();
+    ['obPhone', 'obRegion', 'obBizName', 'obRole', 'obStage'].forEach(function (i) { bad(i, false); });
+    if (phone && !validPhone(phone)) { bad('obPhone', true); err('e2', 'That phone number does not look right. Use digits only, for example 024 123 4567 or +233 24 123 4567.'); $('obPhone').focus(); return; }
+    var data = { account_type: type, onboarded_at: new Date().toISOString(), onboarding_skipped_at: null };
+    if (phone) data.phone = phone;
+    if (region) data.region = region;
+    if (city) data.city = city;
+    if (owner) {
+      var biz = $('obBizName').value.trim(), role = $('obRole').value, stage = $('obStage').value;
+      var missing = [];
+      if (!phone) { bad('obPhone', true); missing.push('phone number'); }
+      if (!region) { bad('obRegion', true); missing.push('region'); }
+      if (!biz) { bad('obBizName', true); missing.push('business name'); }
+      if (!role) { bad('obRole', true); missing.push('your role'); }
+      if (!stage) { bad('obStage', true); missing.push('whether your business is already listed'); }
+      if (missing.length) { err('e2', 'Please add: ' + missing.join(', ') + '.'); return; }
+      data.owner_business_name = biz; data.owner_role = role; data.owner_stage = stage;
+    } else {
+      data.interests = Array.prototype.map.call(document.querySelectorAll('#chips input:checked'), function (i) { return i.value; });
+      data.owner_business_name = null; data.owner_role = null; data.owner_stage = null;
+    }
+    err('e2', ''); this.disabled = true; this.textContent = 'Saving…';
+    var e = await save(data);
+    this.disabled = false; this.textContent = 'Finish';
+    if (e) { err('e2', 'Sorry, we could not save your details. Please try again in a moment.'); return; }
+    meta = Object.assign({}, meta, data);
+    renderDone(); show(3);
+  });
+
+  function card(href, ico, title, text, primary) {
+    var a = document.createElement('a'); a.href = href; if (primary) a.className = 'primary';
+    var i = document.createElement('span'); i.className = 'ni'; i.textContent = ico; i.setAttribute('aria-hidden', 'true');
+    var d = document.createElement('span'); var s = document.createElement('strong'); s.textContent = title;
+    var sm = document.createElement('small'); sm.textContent = text; d.appendChild(s); d.appendChild(sm);
+    var ar = document.createElement('span'); ar.className = 'arrow'; ar.textContent = '→'; ar.setAttribute('aria-hidden', 'true');
+    a.appendChild(i); a.appendChild(d); a.appendChild(ar); return a;
+  }
+  function renderDone() {
+    var box = $('nextCards'); box.textContent = '';
+    if (type === 'owner') {
+      var st = meta.owner_stage;
+      $('s3sub').textContent = 'Thanks. Here is the quickest way to get ' + (meta.owner_business_name || 'your business') + ' in front of customers.';
+      if (st === 'new') {
+        box.appendChild(card('AddBusiness.html', '➕', 'Add your business', 'Create your free listing. You can pause at any time.', true));
+        box.appendChild(card('Browse.html', '🔎', 'Check it is not listed yet', 'Search first so you do not create a duplicate.'));
+      } else {
+        box.appendChild(card('Browse.html', '🔎', 'Find your business', 'Search for it, then choose Claim this business on its page.', true));
+        box.appendChild(card('AddBusiness.html', '➕', 'Cannot find it? Add it', 'Create a new listing for your business.'));
+      }
+      box.appendChild(card('Profile.html', '👤', 'Review your profile', 'Add a photo and check your details.'));
+    } else {
+      $('s3sub').textContent = 'Your account is ready. Here is where to start.';
+      box.appendChild(card('Browse.html', '🔎', 'Browse businesses', 'Find trusted places across all 16 regions.', true));
+      box.appendChild(card('Deals.html', '🏷️', 'See current deals', 'Offers from local businesses.'));
+      box.appendChild(card('Profile.html', '👤', 'Complete your profile', 'Add a photo and a short bio.'));
+    }
+  }
+
+  (async function init() {
+    if (!window.sbClient) { err('e1', 'Something went wrong loading this page. Please refresh.'); return; }
+    var s = null;
+    try { var r = await window.sbClient.auth.getSession(); s = r && r.data && r.data.session; } catch (e) { s = null; }
+    if (!s) { window.location.replace('Login.html'); return; }
+    user = s.user; meta = user.user_metadata || {};
+    var first = meta.first_name || (meta.full_name || '').split(' ')[0] || '';
+    if (first) $('wlName').textContent = ', ' + first;
+    if (meta.account_type === 'visitor' || meta.account_type === 'owner') {
+      var r1 = document.querySelector('input[name="accountType"][value="' + meta.account_type + '"]'); if (r1) r1.checked = true;
+    }
+    if (meta.phone) $('obPhone').value = meta.phone;
+    if (meta.region) $('obRegion').value = meta.region;
+    if (meta.city) $('obCity').value = meta.city;
+    if (meta.owner_business_name) $('obBizName').value = meta.owner_business_name;
+    if (meta.owner_role) $('obRole').value = meta.owner_role;
+    if (meta.owner_stage) $('obStage').value = meta.owner_stage;
+    (meta.interests || []).forEach(function (v) { var c = document.querySelector('#chips input[value="' + v + '"]'); if (c) c.checked = true; });
+  })();
+})();
+</script>
+
+<script>
+  // Mobile nav toggle (hamburger)
+  (function () {
+    var navLinks = document.querySelector('.nav-links');
+    var hamburger = document.getElementById('navHamburger');
+    if (!navLinks || !hamburger) return;
+
+    function closeMobileNav() {
+      navLinks.classList.remove('mobile-open');
+      hamburger.textContent = '☰';
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    window.toggleMobileNav = function () {
+      var isOpen = navLinks.classList.toggle('mobile-open');
+      hamburger.textContent = isOpen ? '✕' : '☰';
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    };
+
+    document.addEventListener('click', function (e) {
+      if (navLinks.classList.contains('mobile-open') && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+        closeMobileNav();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMobileNav();
+    });
+
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeMobileNav);
+    });
+  })();
+</script>
+<!-- Cookie Consent Banner -->
+<div id="cookieConsent" class="cookie-consent" role="dialog" aria-live="polite" aria-label="Cookie consent">
+  <div class="cookie-consent-inner">
+    <p class="cookie-consent-text">
+      We use cookies to run MeNimGhana.com and improve your experience. By clicking &quot;Accept&quot;, you agree to our use of cookies as described in our
+      <a href="PrivacyPolicy.html">Privacy Policy</a>.
+    </p>
+    <div class="cookie-consent-actions">
+      <button type="button" id="cookieDecline" class="cookie-btn cookie-btn-outline">Decline</button>
+      <button type="button" id="cookieAccept" class="cookie-btn cookie-btn-accept">Accept</button>
+    </div>
+  </div>
+</div>
+<style>
+  .cookie-consent {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: var(--gray-900, #1A1816);
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.25);
+    padding: 16px 20px;
+    transform: translateY(110%);
+    transition: transform 0.35s ease;
+  }
+  .cookie-consent.is-visible { transform: translateY(0); }
+  .cookie-consent-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .cookie-consent-text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #F2F0EB;
+    flex: 1 1 320px;
+  }
+  .cookie-consent-text a { color: var(--brand-gold, #FCD116); text-decoration: underline; }
+  .cookie-consent-actions { display: flex; gap: 10px; flex-shrink: 0; }
+  .cookie-btn {
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid transparent;
+  }
+  .cookie-btn-accept {
+    background: var(--brand-gold, #FCD116);
+    color: var(--gray-900, #1A1816);
+  }
+  .cookie-btn-accept:hover { background: var(--brand-gold-dark, #E0B800); }
+  .cookie-btn-outline {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255,255,255,0.35);
+  }
+  .cookie-btn-outline:hover { background: rgba(255,255,255,0.1); }
+  @media (max-width: 560px) {
+    .cookie-consent-inner { flex-direction: column; align-items: stretch; }
+    .cookie-consent-actions { justify-content: flex-end; }
+  }
+</style>
+<script>
+(function () {
+  var STORAGE_KEY = 'sg_cookie_consent';
+  function getConsent() {
+    try { return localStorage.getItem(STORAGE_KEY); } catch (e) { return null; }
+  }
+  function setConsent(value) {
+    try { localStorage.setItem(STORAGE_KEY, value); } catch (e) {}
+  }
+  var banner = document.getElementById('cookieConsent');
+  if (!banner) return;
+  if (!getConsent()) {
+    window.requestAnimationFrame(function () {
+      banner.classList.add('is-visible');
+    });
+  }
+  var acceptBtn = document.getElementById('cookieAccept');
+  var declineBtn = document.getElementById('cookieDecline');
+  if (acceptBtn) {
+    acceptBtn.addEventListener('click', function () {
+      setConsent('accepted');
+      if (window.gtag) { gtag('consent', 'update', { analytics_storage: 'granted' }); }
+      banner.classList.remove('is-visible');
+    });
+  }
+  if (declineBtn) {
+    declineBtn.addEventListener('click', function () {
+      setConsent('declined');
+      if (window.gtag) { gtag('consent', 'update', { analytics_storage: 'denied' }); }
+      banner.classList.remove('is-visible');
+    });
+  }
+})();
+</script>
+<!-- End Cookie Consent Banner -->
+</body>
+</html>

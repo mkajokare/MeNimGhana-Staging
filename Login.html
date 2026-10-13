@@ -370,7 +370,9 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
       return;
     }
 
-    window.location.href = 'index.html';
+    // First sign-in after sign-up: send people through the short "Tell us about you" step once.
+    const um = (data && data.user && data.user.user_metadata) || {};
+    window.location.href = (um.account_type || um.onboarded_at || um.onboarding_skipped_at) ? 'index.html' : 'Welcome.html';
   }
 });
 

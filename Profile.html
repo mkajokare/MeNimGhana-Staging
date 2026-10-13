@@ -372,6 +372,107 @@
 .footer-brand .logo .brand-menim,.footer-brand .logo .star{color:#fff}
 .footer-brand .logo .a{color:#3ED16B}
 </style>
+<style id="profile-redesign">
+  /* Profile redesign: hero, overlapping stat tiles, calmer cards, mobile tab strip */
+  .account-hero { padding: 40px 24px 96px; }
+  .account-hero-inner { align-items: center; gap: 28px; }
+  .account-avatar { width: 104px; height: 104px; font-size: 38px; border: 4px solid rgba(255,255,255,0.22); box-shadow: 0 0 0 4px rgba(252,209,22,0.35), 0 12px 28px rgba(0,0,0,0.45); }
+  .avatar-edit-btn { bottom: 4px; right: 4px; }
+  .account-hero-info { padding: 0; min-width: 0; }
+  .account-hero-badges { margin: 0 0 10px; }
+  .account-hero-name { font-size: 32px; letter-spacing: -0.8px; margin: 0 0 8px; overflow-wrap: anywhere; }
+  .account-hero-meta { gap: 6px 22px; }
+  .account-hero-meta span { color: rgba(255,255,255,0.7); font-size: 14px; }
+  .account-hero-actions { align-self: center; padding: 0; }
+  .btn-edit-profile { background: rgba(255,255,255,0.12); color: #fff; border: 1px solid rgba(255,255,255,0.28); }
+  .btn-edit-profile:hover { background: rgba(255,255,255,0.22); }
+  .hero-badge-owner { background: rgba(206,17,38,0.22); color: #FF8A98; border: 1px solid rgba(206,17,38,0.45); }
+  .hero-badge-visitor { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.25); }
+
+  .account-stats-bar { background: transparent; margin-top: -60px; position: relative; z-index: 2; padding: 0 24px; }
+  .account-stats-inner { padding: 0; gap: 14px; }
+  .account-stat { display: flex; align-items: center; gap: 14px; text-align: left; background: var(--white); border: 1px solid var(--gray-100); border-right: 1px solid var(--gray-100); border-radius: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.10); padding: 16px 18px; transition: transform .15s, box-shadow .15s; }
+  .account-stat:last-child { border-right: 1px solid var(--gray-100); }
+  .account-stat:hover { background: var(--white); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,0.14); }
+  .stat-ico { width: 44px; height: 44px; flex: none; border-radius: 12px; background: var(--brand-gold-light); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+  .account-stat:nth-child(2) .stat-ico { background: var(--brand-red-light); }
+  .account-stat:nth-child(3) .stat-ico { background: var(--brand-green-light); }
+  .account-stat:nth-child(4) .stat-ico { background: var(--gray-100); }
+  .stat-text { display: flex; flex-direction: column; min-width: 0; }
+  .stat-num { color: var(--gray-900); font-size: 24px; line-height: 1.1; }
+  .stat-label { color: var(--gray-600); margin-top: 2px; }
+
+  .page-layout { padding-top: 32px; gap: 28px; }
+  .card { border-radius: 16px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+  .card-header { background: var(--gray-50); padding: 16px 22px; }
+  .side-nav { background: var(--white); border: 1px solid var(--gray-100); border-radius: 16px; padding: 10px; gap: 2px; }
+  .side-nav-item { padding: 10px 12px; }
+  .side-nav-item.active { box-shadow: inset 3px 0 0 var(--brand-red); }
+  #section-personal { display: flex; flex-direction: column; gap: 20px; }
+  .avatar-upload-row { border-bottom: 0; margin: 0; padding: 0; }
+  .form-actions { border-top: 1px solid var(--gray-100); padding-top: 20px; margin-top: 8px; }
+
+  /* complete-your-profile card */
+  .setup-card { border-color: rgba(0,107,63,0.25); background: linear-gradient(180deg, var(--brand-green-light), #fff 70%); }
+  .setup-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 14px; }
+  .setup-title { font-family: var(--font-display); font-size: 18px; font-weight: 800; color: var(--gray-900); margin: 0 0 2px; }
+  .setup-sub { font-size: 13px; color: var(--gray-600); margin: 0; }
+  .setup-pct { font-family: var(--font-display); font-size: 26px; font-weight: 800; color: var(--brand-green); line-height: 1; }
+  .setup-bar { height: 8px; border-radius: 99px; background: rgba(0,107,63,0.14); overflow: hidden; margin-bottom: 16px; }
+  .setup-bar span { display: block; height: 100%; width: 0; background: var(--brand-green); border-radius: 99px; transition: width .4s ease; }
+  .setup-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; padding: 0; margin: 0; }
+  .setup-list li a, .setup-list li span.si { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--gray-800); text-decoration: none; padding: 6px 0; }
+  .setup-list li a:hover { color: var(--brand-red); }
+  .setup-list .tick { width: 22px; height: 22px; flex: none; border-radius: 50%; border: 2px solid var(--gray-200); background: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; color: #fff; }
+  .setup-list li.done .tick { background: var(--brand-green); border-color: var(--brand-green); }
+  .setup-list li.done .si { color: var(--gray-400); text-decoration: line-through; }
+
+  /* how-you-use card */
+  .usage-row { display: grid; grid-template-columns: 150px 1fr; gap: 6px 16px; padding: 10px 0; border-bottom: 1px solid var(--gray-100); font-size: 14px; }
+  .usage-row:last-child { border-bottom: 0; padding-bottom: 0; }
+  .usage-row:first-child { padding-top: 0; }
+  .usage-row dt { color: var(--gray-400); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .3px; padding-top: 2px; }
+  .usage-row dd { color: var(--gray-900); margin: 0; }
+  .usage-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .usage-chips span { background: var(--gray-100); border-radius: 99px; padding: 3px 11px; font-size: 13px; }
+
+  @media (max-width: 900px) {
+    .account-hero-inner { flex-direction: row; align-items: center; gap: 18px; }
+    .account-hero-actions { display: none; }
+    .page-layout { padding-top: 20px; }
+    .side-nav { display: flex; flex-direction: row; overflow-x: auto; gap: 6px; padding: 8px; scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .side-nav::-webkit-scrollbar { display: none; }
+    .side-nav-item { flex: none; white-space: nowrap; padding: 9px 14px; scroll-snap-align: start; }
+    .side-nav-item.active { box-shadow: none; }
+    .side-nav-label { flex: none; }
+  }
+  @media (max-width: 600px) {
+    .account-hero { padding: 28px 16px 84px; }
+    .account-avatar { width: 76px; height: 76px; font-size: 28px; box-shadow: 0 0 0 3px rgba(252,209,22,0.35), 0 8px 20px rgba(0,0,0,0.4); }
+    .avatar-edit-btn { width: 24px; height: 24px; font-size: 11px; }
+    .account-hero-inner { gap: 14px; }
+    .account-hero-name { font-size: 22px; }
+    .account-hero-meta span { font-size: 12.5px; }
+    .account-stats-bar { padding: 0 16px; margin-top: -52px; }
+    .account-stats-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .account-stat { flex: none; padding: 12px; gap: 10px; }
+    .stat-ico { width: 36px; height: 36px; font-size: 17px; border-radius: 10px; }
+    .stat-num { font-size: 20px; }
+    .stat-label { font-size: 11.5px; }
+    .page-layout { padding-left: 16px; padding-right: 16px; }
+    .card-header { padding: 14px 16px; flex-wrap: wrap; }
+    .card-body { padding: 18px 16px; }
+    .setup-list { grid-template-columns: 1fr; }
+    .usage-row { grid-template-columns: 1fr; gap: 2px; }
+    .avatar-upload-row { flex-wrap: wrap; }
+    .avatar-upload-info { flex: 1 1 160px; }
+    .btn-upload { width: 100%; }
+    .save-hint { display: none; }
+    .form-actions { flex-direction: column-reverse; align-items: stretch; }
+    .btn-save-changes { justify-content: center; }
+    .btn-cancel { width: 100%; }
+  }
+</style>
 </head>
 <body>
 
@@ -434,20 +535,18 @@
 <div class="account-hero">
   <div class="account-hero-inner">
     <div class="account-avatar-wrap">
-      <div class="account-avatar" id="heroAvatar">KA</div>
+      <div class="account-avatar" id="heroAvatar">?</div>
       <button class="avatar-edit-btn" title="Change photo" aria-label="Change profile photo">✏️</button>
     </div>
     <div class="account-hero-info">
-      <div class="account-hero-name" id="heroName"></div>
-      <div class="account-hero-meta">
-        <span id="heroLocationLine" style="display:none;">📍 <strong id="heroLocation"></strong></span>
-        <span>📅 Member since <strong id="heroMemberSince">—</strong></span>
-        <span>⭐ <strong id="heroReviewCount">0</strong> reviews written</span>
-        <span>🔖 <strong id="heroSavedCount">0</strong> businesses saved</span>
-      </div>
       <div class="account-hero-badges">
-        <span class="hero-badge hero-badge-member">★ Member</span>
+        <span class="hero-badge hero-badge-member" id="heroRoleBadge">★ Member</span>
         <span class="hero-badge hero-badge-verified" id="heroEmailBadge" style="display:none;"></span>
+      </div>
+      <h1 class="account-hero-name" id="heroName"></h1>
+      <div class="account-hero-meta">
+        <span id="heroLocationLine" style="display:none;"><span aria-hidden="true">📍</span> <strong id="heroLocation"></strong></span>
+        <span><span aria-hidden="true">📅</span> Member since <strong id="heroMemberSince">—</strong></span>
       </div>
     </div>
     <div class="account-hero-actions">
@@ -456,24 +555,24 @@
   </div>
 </div>
 
-<!-- ── STATS BAR ── -->
+<!-- ── STATS ── -->
 <div class="account-stats-bar">
   <div class="account-stats-inner">
     <a class="account-stat" onclick="switchSection('saved')" href="#">
-      <div class="stat-num" id="statSavedCount">0</div>
-      <div class="stat-label">Saved businesses</div>
+      <span class="stat-ico" aria-hidden="true">🔖</span>
+      <span class="stat-text"><span class="stat-num" id="statSavedCount">0</span><span class="stat-label">Saved businesses</span></span>
     </a>
     <a class="account-stat" onclick="switchSection('reviews')" href="#">
-      <div class="stat-num" id="statReviewCount">0</div>
-      <div class="stat-label">Reviews written</div>
+      <span class="stat-ico" aria-hidden="true">⭐</span>
+      <span class="stat-text"><span class="stat-num" id="statReviewCount">0</span><span class="stat-label">Reviews written</span></span>
     </a>
     <a class="account-stat" onclick="switchSection('listings')" href="#">
-      <div class="stat-num" id="statListingCount">0</div>
-      <div class="stat-label">Business listings</div>
+      <span class="stat-ico" aria-hidden="true">🏪</span>
+      <span class="stat-text"><span class="stat-num" id="statListingCount">0</span><span class="stat-label">Business listings</span></span>
     </a>
     <a class="account-stat" onclick="switchSection('activity')" href="#">
-      <div class="stat-num" id="statActivityCount">0</div>
-      <div class="stat-label">Recent activity</div>
+      <span class="stat-ico" aria-hidden="true">📋</span>
+      <span class="stat-text"><span class="stat-num" id="statActivityCount">0</span><span class="stat-label">Recent activity</span></span>
     </a>
   </div>
 </div>
@@ -525,6 +624,25 @@
 
     <!-- ══ PERSONAL INFO ══ -->
     <div id="section-personal">
+      <!-- Profile completeness (filled by renderSetupCards) -->
+      <div class="card setup-card" id="setupCard" hidden>
+        <div class="card-body">
+          <div class="setup-top">
+            <div><h2 class="setup-title">Complete your profile</h2><p class="setup-sub" id="setupSub"></p></div>
+            <div class="setup-pct" id="setupPct" aria-label="Profile completeness">0%</div>
+          </div>
+          <div class="setup-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="setupBar"><span id="setupBarFill"></span></div>
+          <ul class="setup-list" id="setupList"></ul>
+        </div>
+      </div>
+      <!-- How you use MeNim Ghana (from the welcome step) -->
+      <div class="card" id="usageCard" hidden>
+        <div class="card-header">
+          <span class="card-title"><span class="hdot"></span> How you use MeNim Ghana</span>
+          <a class="card-link" href="Welcome.html">Update</a>
+        </div>
+        <div class="card-body" id="usageBody"></div>
+      </div>
       <!-- Photo -->
       <div class="card">
         <div class="card-header">
@@ -546,7 +664,7 @@
       <div class="card">
         <div class="card-header">
           <span class="card-title"><span class="hdot"></span> Personal details</span>
-          <span class="save-hint">Changes save automatically</span>
+          <span class="save-hint">Press Save changes to apply</span>
         </div>
         <div class="card-body">
           <div class="form-grid">
@@ -575,6 +693,7 @@
             <div class="form-group">
               <label class="form-label">Region</label>
               <select class="form-select" id="regionSelect">
+                <option value="">Select region</option>
                 <option>Greater Accra</option>
                 <option>Ashanti</option>
                 <option>Western</option>
@@ -595,7 +714,7 @@
             </div>
             <div class="form-group">
               <label class="form-label">City / Town</label>
-              <input type="text" class="form-input" id="cityTown" value="Osu, Accra">
+              <input type="text" class="form-input" id="cityTown" value="">
             </div>
             <div class="form-group span2">
               <label class="form-label">Bio / About you</label>
@@ -1126,6 +1245,7 @@
 
     const langSelect = document.getElementById('preferredLanguage');
     if (langSelect && meta.preferred_language) langSelect.value = meta.preferred_language;
+    if (typeof renderSetupCards === 'function') renderSetupCards();
 
     const initialsText = initials(displayName);
     document.getElementById('avatarLarge').textContent = initialsText;
@@ -1479,8 +1599,6 @@
     const claims = claimsRes.data || [];
 
     /* -- Hero + stats bar -- */
-    document.getElementById('heroSavedCount').textContent = saved.length;
-    document.getElementById('heroReviewCount').textContent = reviews.length;
     document.getElementById('heroMemberSince').textContent = monthYear(currentUser.created_at);
     document.getElementById('statSavedCount').textContent = saved.length;
     document.getElementById('statReviewCount').textContent = reviews.length;
@@ -2173,6 +2291,92 @@
     window.addEventListener('hashchange', applyHash);
     applyHash();
   })();
+</script>
+<script>
+/* Profile redesign: role badge, "complete your profile" checklist and "how you use MeNim Ghana" summary.
+   All values come from user_metadata (written by Welcome.html and the Personal details form). */
+(function () {
+  var CAT_LABELS = { 'food': 'Food & Drink', 'salons': 'Salons & Barbers', 'pharmacies': 'Pharmacies', 'clinics': 'Clinics & Hospitals', 'plumbers': 'Plumbers',
+    'electricians': 'Electricians', 'builders': 'Builders & Masons', 'transport': 'Transport & Taxis', 'fashion': 'Fashion & Tailors', 'mobile-money': 'Mobile Money' };
+  var ROLE_LABELS = { owner: 'Owner', manager: 'Manager', representative: 'Authorised representative' };
+  var STAGE_LABELS = { 'new': 'Not listed yet, adding it', 'listed': 'Already listed, wants to claim it', 'unsure': 'Not sure if it is listed' };
+  var $ = function (id) { return document.getElementById(id); };
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  window.renderSetupCards = function () {
+    if (typeof currentUser === 'undefined' || !currentUser) return;
+    var m = currentUser.user_metadata || {};
+    var type = m.account_type;
+
+    var rb = $('heroRoleBadge');
+    if (rb) {
+      rb.textContent = type === 'owner' ? '🏪 Business owner' : type === 'visitor' ? '🔎 Visitor' : '★ Member';
+      rb.className = 'hero-badge ' + (type === 'owner' ? 'hero-badge-owner' : type === 'visitor' ? 'hero-badge-visitor' : 'hero-badge-member');
+    }
+
+    var hasName = !!((m.first_name || m.full_name) && (m.last_name || (m.full_name || '').indexOf(' ') > 0));
+    var items = [
+      { label: 'Add your full name', done: hasName, field: 'firstName' },
+      { label: 'Tell us how you use MeNim Ghana', done: !!type, href: 'Welcome.html' },
+      { label: 'Add a phone number', done: !!m.phone, field: 'phoneNumber' },
+      { label: 'Add your region and town', done: !!(m.region && m.city), field: 'cityTown' },
+      { label: 'Write a short bio', done: !!m.bio, field: 'bioText' }
+    ];
+    if (type === 'owner') items.push({ label: 'Add your business details', done: !!(m.owner_business_name && m.owner_role), href: 'Welcome.html' });
+    else items.push({ label: 'Pick the categories you look for', done: !!(m.interests && m.interests.length), href: 'Welcome.html' });
+
+    var done = items.filter(function (i) { return i.done; }).length;
+    var pct = Math.round(done / items.length * 100);
+    var card = $('setupCard');
+    if (card) {
+      card.hidden = pct === 100;
+      $('setupPct').textContent = pct + '%';
+      $('setupBarFill').style.width = pct + '%';
+      $('setupBar').setAttribute('aria-valuenow', pct);
+      $('setupSub').textContent = type === 'owner'
+        ? 'A complete profile builds trust with customers and speeds up verifying your business.'
+        : 'A few more details help us show you the right businesses.';
+      var ul = $('setupList'); ul.textContent = '';
+      items.forEach(function (i) {
+        var li = el('li', i.done ? 'done' : '');
+        var node;
+        if (i.done) { node = el('span', 'si-wrap'); node.style.display = 'flex'; node.style.alignItems = 'center'; node.style.gap = '10px'; node.style.padding = '6px 0'; }
+        else if (i.href) { node = el('a'); node.href = i.href; }
+        else { node = el('a'); node.href = '#'; node.addEventListener('click', function (ev) { ev.preventDefault(); switchSection('personal'); var f = $(i.field); if (f) { f.scrollIntoView({ behavior: 'smooth', block: 'center' }); f.focus({ preventScroll: true }); } }); }
+        var tick = el('span', 'tick', i.done ? '✓' : ''); tick.setAttribute('aria-hidden', 'true');
+        var lab = el('span', 'si', i.label);
+        node.appendChild(tick); node.appendChild(lab);
+        if (i.done) { var sr = el('span', null, ' (done)'); sr.style.cssText = 'position:absolute;left:-9999px'; node.appendChild(sr); }
+        li.appendChild(node); ul.appendChild(li);
+      });
+    }
+
+    var usage = $('usageCard');
+    if (usage) {
+      var body = $('usageBody'); body.textContent = '';
+      if (!type) { usage.hidden = true; }
+      else {
+        usage.hidden = false;
+        var dl = el('dl'); dl.style.margin = '0';
+        function row(k, v) { var r = el('div', 'usage-row'); r.appendChild(el('dt', null, k)); var dd = el('dd'); if (typeof v === 'string') dd.textContent = v; else dd.appendChild(v); r.appendChild(dd); dl.appendChild(r); }
+        row('Account type', type === 'owner' ? 'Business owner or manager' : 'Looking for businesses');
+        if (type === 'owner') {
+          if (m.owner_business_name) row('Business', m.owner_business_name);
+          if (m.owner_role) row('Your role', ROLE_LABELS[m.owner_role] || m.owner_role);
+          if (m.owner_stage) row('Listing status', STAGE_LABELS[m.owner_stage] || m.owner_stage);
+        } else {
+          var cats = (m.interests || []).filter(function (c) { return CAT_LABELS[c]; });
+          var wrap = el('div', 'usage-chips');
+          if (cats.length) cats.forEach(function (c) { wrap.appendChild(el('span', null, CAT_LABELS[c])); });
+          else wrap.appendChild(el('span', null, 'None picked yet'));
+          row('Looking for', wrap);
+        }
+        body.appendChild(dl);
+      }
+    }
+  };
+  if (typeof currentUser !== 'undefined' && currentUser) window.renderSetupCards();
+})();
 </script>
 </body>
 </html>

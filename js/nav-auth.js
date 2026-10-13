@@ -36,7 +36,8 @@
     try {
       const { error } = await window.sbClient.auth.verifyOtp({ token_hash: tokenHash, type: type });
       if (error) showAuthBanner('That email link is invalid or has expired. Please sign in, or request a new one.', false);
-      else showAuthBanner(type === 'signup' ? 'Email confirmed. You are signed in.' : 'Done. You are signed in.', true);
+      else if (type === 'signup') { window.location.replace('Welcome.html'); return; }
+      else showAuthBanner('Done. You are signed in.', true);
     } catch (e) {
       showAuthBanner('That email link could not be verified. Please try again.', false);
     }
@@ -88,6 +89,40 @@
     if (avatarLg) avatarLg.textContent = initialsText;
     if (dropName) dropName.textContent = displayName;
     if (dropEmail) dropEmail.textContent = user.email || '';
+    maybeShowOnboardingPrompt(meta);
+  }
+
+  /* Accounts that have not done the one-time "Tell us about you" step get a small,
+     dismissible prompt (once per browser session). Not shown on the auth pages or Admin. */
+  function maybeShowOnboardingPrompt(meta) {
+    if (meta.account_type || meta.onboarded_at || meta.onboarding_skipped_at) return;
+    const page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    if (['welcome.html', 'login.html', 'signup.html', 'forgotpassword.html', 'resetpassword.html', 'admin.html'].indexOf(page) !== -1) return;
+    try { if (sessionStorage.getItem('sg_onboard_dismissed')) return; } catch (e) { /* show anyway */ }
+    if (document.getElementById('sgOnboardPrompt')) return;
+    const box = document.createElement('div');
+    box.id = 'sgOnboardPrompt';
+    box.setAttribute('role', 'region');
+    box.setAttribute('aria-label', 'Finish setting up your account');
+    box.style.cssText = 'position:fixed;right:16px;bottom:16px;z-index:9998;max-width:340px;background:#fff;border:1px solid #E0DDD5;border-left:4px solid #006B3F;border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,.18);padding:14px 16px;font:14px/1.45 system-ui,sans-serif;color:#2A2723;';
+    const t = document.createElement('strong');
+    t.textContent = 'Finish setting up your account';
+    t.style.cssText = 'display:block;margin-bottom:2px;';
+    const d = document.createElement('div');
+    d.textContent = 'Tell us if you are looking for businesses or own one. It takes a minute.';
+    d.style.cssText = 'color:#5A5650;font-size:13px;margin-bottom:10px;';
+    const go = document.createElement('a');
+    go.href = 'Welcome.html'; go.textContent = 'Set up now';
+    go.style.cssText = 'display:inline-block;background:#006B3F;color:#fff;text-decoration:none;font-weight:600;padding:8px 14px;border-radius:8px;margin-right:8px;';
+    const no = document.createElement('button');
+    no.type = 'button'; no.textContent = 'Not now';
+    no.style.cssText = 'background:none;border:0;color:#5A5650;font:inherit;cursor:pointer;text-decoration:underline;padding:8px 4px;';
+    no.addEventListener('click', function () {
+      try { sessionStorage.setItem('sg_onboard_dismissed', '1'); } catch (e) { /* ignore */ }
+      box.remove();
+    });
+    box.appendChild(t); box.appendChild(d); box.appendChild(go); box.appendChild(no);
+    document.body.appendChild(box);
   }
 
   window.navSignOut = async function () {
