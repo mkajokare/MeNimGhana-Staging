@@ -207,6 +207,7 @@
         <a href="ForgotPassword.html" class="forgot-link">Forgot password?</a>
       </div>
 
+      <div id="loginCaptcha" class="sg-captcha"></div>
       <button type="submit" class="btn-login">Sign in</button>
     </form>
 
@@ -311,6 +312,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script src="js/supabase-client.js"></script>
+<script src="js/captcha.js"></script>
+<script>document.addEventListener("DOMContentLoaded",function(){ if(window.sgCaptcha) sgCaptcha.mount("#loginCaptcha"); });</script>
 <script>
 document.getElementById('loginForm').addEventListener('submit', async function(e) {
   e.preventDefault();
@@ -348,7 +351,16 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     submitBtn.disabled = true;
     submitBtn.textContent = 'Signing in...';
 
-    const { data, error } = await window.sbClient.auth.signInWithPassword({ email, password });
+    // Supabase CAPTCHA protection: every password sign-in needs a fresh Turnstile token.
+    const captchaToken = await sgCaptcha.token();
+    if (!captchaToken) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+      alert(window.sgCaptcha.failMessage);
+      return;
+    }
+    const { data, error } = await window.sbClient.auth.signInWithPassword({ email, password, options: { captchaToken } });
+    sgCaptcha.reset();
 
     submitBtn.disabled = false;
     submitBtn.textContent = originalLabel;

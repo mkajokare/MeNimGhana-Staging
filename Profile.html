@@ -885,6 +885,7 @@
                 <div class="security-sub" id="emailVerSub"></div>
               </div>
               <button class="btn-security" id="btnResendEmail" onclick="resendVerificationEmail()" style="display:none;">Resend email</button>
+              <div id="resendCaptcha" class="sg-captcha" style="margin:10px 0 0;"></div>
             </div>
             <div class="security-row">
               <div class="security-info">
@@ -1044,6 +1045,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script src="js/supabase-client.js"></script>
+<script src="js/captcha.js"></script>
 <script src="js/admin-link.js"></script>
 <script>
   /* ── Account facts and account actions: everything here comes from the real account ── */
@@ -1088,7 +1090,13 @@
     const btn = document.getElementById('btnResendEmail');
     btn.disabled = true;
     try {
-      const { error } = await window.sbClient.auth.resend({ type: 'signup', email: currentUser.email });
+      // Supabase CAPTCHA protection also covers "resend confirmation email".
+      await sgCaptcha.mount('#resendCaptcha');
+      const captchaToken = await sgCaptcha.token();
+      if (!captchaToken) { alert(sgCaptcha.failMessage); return; }
+      const { error } = await window.sbClient.auth.resend({ type: 'signup', email: currentUser.email, options: { captchaToken } });
+      sgCaptcha.reset();
+      document.getElementById('resendCaptcha').textContent = '';
       if (error) alert('Sorry, the email could not be sent: ' + error.message);
       else showToast('Verification email sent to ' + currentUser.email);
     } catch (e) {

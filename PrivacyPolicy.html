@@ -248,7 +248,7 @@
 
 <div class="content">
   <!-- DRAFT October 5, 2026: yellow [BRACKETED] items are for the owner to fill in; have a Ghanaian lawyer review before launch -->
-  <div class="last-updated">Last updated: October 5, 2026</div>
+  <div class="last-updated">Last updated: October 13, 2026</div>
 
   <div class="section">
     <h2 class="section-title"><span class="hdot"></span>1. Who we are and what this policy covers</h2>
@@ -298,6 +298,7 @@
       <ul>
         <li><strong>Supabase</strong> stores our database (accounts, listings, reviews, saved businesses), handles sign-in, and stores uploaded photos.</li>
         <li><strong>Brevo</strong> sends the account emails described above.</li>
+        <li><strong>Cloudflare</strong> runs a security check (Cloudflare Turnstile) on the sign-in, sign-up and password-reset forms to tell real people from automated bots. Your browser connects to Cloudflare directly, so Cloudflare receives your IP address and browser details, and may use your browser's storage to run the check.</li>
         <li><strong>Our website host,</strong> <mark class="todo">[HOSTING PROVIDER, once chosen]</mark>, delivers the site's pages to your browser.</li>
         <li><strong>Google</strong> provides Google Analytics (only if you accept analytics cookies) and Google Fonts. Fonts load from Google's servers, so Google receives your IP address when a page loads.</li>
         <li><strong>jsDelivr and unpkg</strong> deliver code libraries the site depends on, and <strong>OpenStreetMap</strong> provides map tiles and address lookups. Each of them receives your IP address and the page request. When we look up an address, the address you typed is sent to OpenStreetMap. If you use the "Use my location" button, your browser asks your permission first; your position is then used to find nearby listings and is sent to OpenStreetMap to name the area. We do not store it.</li>

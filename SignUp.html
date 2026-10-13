@@ -226,6 +226,7 @@
         <span>I agree to the <a href="TermsOfService.html">Terms of Service</a> and <a href="PrivacyPolicy.html">Privacy Policy</a></span>
       </label>
 
+      <div id="signupCaptcha" class="sg-captcha"></div>
       <button type="submit" class="btn-signup">Create Account</button>
     </form>
 
@@ -320,6 +321,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script src="js/supabase-client.js"></script>
+<script src="js/captcha.js"></script>
+<script>document.addEventListener("DOMContentLoaded",function(){ if(window.sgCaptcha) sgCaptcha.mount("#signupCaptcha"); });</script>
 <script>
 const PASSWORD_RULES = {
   length: pw => pw.length >= 8,
@@ -419,16 +422,25 @@ document.getElementById('signupForm').addEventListener('submit', async function(
     submitBtn.disabled = true;
     submitBtn.textContent = 'Creating account...';
 
+    const captchaToken = await sgCaptcha.token();
+    if (!captchaToken) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+      alert(window.sgCaptcha.failMessage);
+      return;
+    }
     const { data, error } = await window.sbClient.auth.signUp({
       email: email,
       password: password,
       options: {
+        captchaToken: captchaToken,
         data: { full_name: name },
         // send the confirmation link back to this site's home page (works under a sub-path like /searchghana-staging/)
         emailRedirectTo: new URL('index.html', window.location.href).href
       }
     });
 
+    sgCaptcha.reset();
     submitBtn.disabled = false;
     submitBtn.textContent = originalLabel;
 
